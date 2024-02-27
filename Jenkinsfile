@@ -49,6 +49,9 @@ pipeline {
             }
         }
         stage('Run Ansible Roles') {
+            input {
+                message "Proceed to run Ansible Roles?"
+            }
             parallel {
                 stage('Kafka Role') {
                     steps {
