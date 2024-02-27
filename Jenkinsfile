@@ -48,6 +48,21 @@ pipeline {
                 }
             }
         }
-
+        stage('Run Ansible Roles') {
+            parallel {
+                stage('Kafka Role') {
+                    steps {
+                        // Run your first Ansible role
+                        sh 'ansible-playbook -i aws_ec2.yml kafka.yml'
+                    }
+                }
+                stage('Zookeeper Role') {
+                    steps {
+                        // Run your second Ansible role
+                        sh 'ansible-playbook -i aws_ec2.yml zookeeper.yml'
+                    }
+                }
+            }
+        }
     }
 }
