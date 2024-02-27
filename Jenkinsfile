@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('git Clone') {
             steps {
-                git 'https://github.com/nishusingh26/Final_repo_kafka.git'
+                git branch: 'main', url: 'https://github.com/nishusingh26/Final_repo_kafka.git'
             }
         }
         stage('Terraform init') {
