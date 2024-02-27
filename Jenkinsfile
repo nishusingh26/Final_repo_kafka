@@ -15,7 +15,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/nishusingh26/kafka-github-project.git'
+                git branch: 'main', url: 'https://github.com/nishusingh26/Final_repo_kafka.git'
             }
         }
         stage('Terraform init') {
